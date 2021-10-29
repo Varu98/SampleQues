@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--         // You have to create a text field and three button. // Suppose your input text is github. ,// On clicking the first button the text should become like this GITHUB. // On clicking the second button the text should become like this Github. // On clicking the third button the text should become like this github.
+        time = 12:40
+ -->
+    <input type="text" class="input" />
+    <button class="lowercase">LowerCase</button>
+    <button class="uppercase">UpperCase</button>
+    <button class="uppercaseFirstLetter">UpperCase The First Letter</button>
+    <div class="output"></div>
+
+    <script>
+      const input = document.querySelector(".input");
+      const output = document.querySelector(".output");
+      const lowercase = document.querySelector(".lowercase");
+      const uppercase = document.querySelector(".uppercase");
+      const uppercaseFirstLetter = document.querySelector(
+        ".uppercaseFirstLetter"
+      );
+
+      function toLowerCase() {
+        let lower = input.value.toLowerCase();
+        output.innerHTML = lower;
+      }
+      function toUpperCase() {
+        let upper = input.value.toUpperCase();
+        output.innerHTML = upper;
+      }
+      function toUpperCaseFirstLetter() {
+        let firstLetter = input.value.split("");
+        firstLetter[0] = firstLetter[0].toUpperCase();
+        firstLetter = firstLetter.join("");
+        console.log(firstLetter);
+        output.innerHTML = firstLetter;
+      }
+      lowercase.addEventListener("click", toLowerCase);
+      uppercase.addEventListener("click", toUpperCase);
+      uppercaseFirstLetter.addEventListener("click", toUpperCaseFirstLetter);
+    </script>
+  </body>
+</html>
